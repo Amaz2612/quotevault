@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotevault</title>
+  <meta name="description" content="Ontdek, zoek en bewaar quotes. Front-end project met OOP en MVC in JavaScript.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Naar de inhoud</a>
+
+  <header class="site-header">
+    <p class="logo">Quotevault</p>
+    <nav aria-label="Hoofdmenu">
+      <ul class="nav">
+        <li><a href="#today">Vandaag</a></li>
+        <li><a href="#discover">Ontdekken</a></li>
+        <li><a href="#browse">Zoeken</a></li>
+        <li><a href="#favorites">Favorieten <span id="fav-count" class="count">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+  <main id="main">
+  
+    <section id="today" class="section section--today" aria-labelledby="today-title">
+      <h2 id="today-title" class="section__title">Quote van vandaag</h2>
+      <div id="daily-quote">
+        <p class="empty">Laden...</p>
+      </div>
+    </section>
+
+  
+    <section id="discover" class="section" aria-labelledby="discover-title">
+      <div class="section__head">
+        <h2 id="discover-title" class="section__title">Ontdekken</h2>
+        <button id="btn-random" class="btn" type="button">Nieuwe quote</button>
+      </div>
+      <div id="random-quote"></div>
+    </section>
+
+  
+    <section id="browse" class="section" aria-labelledby="browse-title">
+      <h2 id="browse-title" class="section__title">Zoeken</h2>
+      <label class="search__label" for="search">Zoek op woord of auteur</label>
+      <input id="search" class="search__input" type="search" placeholder="Bijv. succes of Einstein" autocomplete="off">
+      <p id="results-summary" class="summary" aria-live="polite"></p>
+      <div id="results" class="quote-list"></div>
+      <nav id="pagination" class="pagination" aria-label="Paginering"></nav>
+    </section>
+
+  
+    <section id="favorites" class="section" aria-labelledby="favorites-title">
+      <h2 id="favorites-title" class="section__title">Favorieten</h2>
+      <div id="favorites-list" class="quote-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Quotes via de DummyJSON Quotes API. Favorieten worden alleen in deze browser opgeslagen.</p>
+  </footer>
+
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
